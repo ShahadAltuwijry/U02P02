@@ -1,11 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Header from "./../Header";
 import "./style.css";
 // import footerimg from "./../روح السعودية/footer.png";
 
 const Home = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <div className="homeWrapper">
       <Header />

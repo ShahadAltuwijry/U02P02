@@ -5,7 +5,7 @@ import "./style.css";
 
 const slideImages = [
   {
-    url: "./الدفى حولك.jpeg",
+    url: "./الدفى حولك.jpg",
     caption: "Slide 1",
   },
   {
@@ -17,7 +17,7 @@ const slideImages = [
     caption: "Slide 3",
   },
   {
-    url: "./المطر حولك.webp",
+    url: "./المطر حولك.jpg",
     caption: "Slide 4",
   },
 ];
