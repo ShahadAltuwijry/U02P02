@@ -11,7 +11,7 @@ const DB = process.env.DB;
 
 mongoose
   .connect(
-    `mongodb+srv://shahad:<606566Aa>@project2.5nwrx.mongodb.net/test${DB}`,
+    `mongodb+srv://shahad:606566Aa@project2.5nwrx.mongodb.net/${DB}`,
     options
   )
   .then(
@@ -19,6 +19,6 @@ mongoose
       console.log("DB Ready To Use");
     },
     (err) => {
-      console.log(err);
+      console.log(err.message);
     }
   );
