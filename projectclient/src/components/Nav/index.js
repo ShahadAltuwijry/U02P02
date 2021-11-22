@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Nav = () => {
   const [navbar, setNavbar] = useState(false);
+  const navigate = useNavigate();
 
   const changeColor = () => {
     console.log(window.scrollY);
@@ -18,7 +20,14 @@ const Nav = () => {
     <>
       <nav className={navbar ? "navBar active" : "navBar"}>
         <div className="navWrapper">
-          <button className="signBtn">Sign in/up</button>
+          <button
+            className="signBtn"
+            onClick={() => {
+              navigate("/Login");
+            }}
+          >
+            Sign in/up
+          </button>
           <img src="./روح السعودية.png" className="logo" />
           <div className="side">
             <img
