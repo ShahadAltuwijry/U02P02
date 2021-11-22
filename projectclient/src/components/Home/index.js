@@ -12,15 +12,17 @@ const Home = () => {
         <div className="about">
           <img src="./campain.png" className="campain" />
           <div className="content">
-            <iframe
-              width="500"
-              height="306"
-              src="https://www.youtube.com/embed/WNzYGeBbOUA"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <div className="youtubeBg">
+              <iframe
+                width="430"
+                height="259"
+                src="https://www.youtube.com/embed/WNzYGeBbOUA"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
             <p className="Paragraph">
               استكشف مجموعة مثيرة للاهتمام من الأنشطة والوجهات المناسبة لأشهر
               السنة الأكثر برودة. استمتع بمناخ البحر الأحمر مع شمس الشتاء
@@ -37,7 +39,15 @@ const Home = () => {
         </div>
         {/* </div> */}
       </div>
-      
+      <div className="packagesDiv">
+        <h1>packages</h1>
+      </div>
+      <div className="programsDiv">
+        <h1>programs</h1>
+      </div>
+      <div className="touristDiv">
+        <h1>tourist spots</h1>
+      </div>
     </div>
   );
 };
