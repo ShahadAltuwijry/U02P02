@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --lightBlue: #b5dada;
+  --darker: #82bec5;
+  --BlueLagoon: #057d8b;
+  --darkest: #033f46;
+}
