@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Description from "./components/Description";
 import LogIn from "./components/LogIn";
@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/Login" element={<LogIn />} />
         <Route exact path="/UserPage" element={<UserPage />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

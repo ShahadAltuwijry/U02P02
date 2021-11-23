@@ -1,6 +1,7 @@
 import React from "react";
 // import { useNavigate } from "react-router-dom";
 import Header from "./../Header";
+import Footer from "./../Footer";
 import "./style.css";
 // import footerimg from "./../روح السعودية/footer.png";
 
@@ -71,6 +72,7 @@ const Home = () => {
       <div className="touristDiv">
         <h1>tourist spots</h1>
       </div> */}
+      <Footer />
     </div>
   );
 };
