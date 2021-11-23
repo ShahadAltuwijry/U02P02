@@ -1,9 +1,9 @@
 const express = require("express");
-const { createUser, getAllUsers } = require("./../controllers/users");
+const { createProgram, getAllPrograms } = require("./../controllers/programs");
 
-const userRouter = express.Router();
+const programRouter = express.Router();
 
-userRouter.post("/user", createUser);
-userRouter.get("/user", getAllUsers);
+programRouter.post("/user", createProgram);
+programRouter.get("/user", getAllPrograms);
 
-module.exports = userRouter;
+module.exports = programRouter;
