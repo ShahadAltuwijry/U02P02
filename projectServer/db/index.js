@@ -9,16 +9,11 @@ const options = {
 dotenv.config();
 const DB = process.env.DB;
 
-mongoose
-  .connect(
-    `mongodb+srv://shahad:606566Aa@project2.5nwrx.mongodb.net/${DB}`,
-    options
-  )
-  .then(
-    () => {
-      console.log("DB Ready To Use");
-    },
-    (err) => {
-      console.log(err.message);
-    }
-  );
+mongoose.connect(DB, options).then(
+  () => {
+    console.log("DB Ready To Use");
+  },
+  (err) => {
+    console.log(err.message);
+  }
+);

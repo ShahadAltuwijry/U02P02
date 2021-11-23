@@ -33,19 +33,19 @@ const getAllUsers = (req, res) => {
 const updateUser = (req, res) => {
   /*shahad you will use this for the update inputs in the user page,
    the input values will check this function*/
-  const { userName } = req.params;
+  const { name } = req.params;
   const { userName, email, password } = req.body;
   let index = 0;
   try {
     const found = userModel.find((item, i) => {
       index = i;
-      return item.userName == userName;
+      return item.userName == name;
     });
     if (found) {
       if (found.userName == "guest") {
         res.status(404).json("you are a guest, sign up to get update option");
       } else {
-        if (userName) found.userName = userName;
+        if (name) found.userName = name;
         if (email) found.email = email;
         if (password) found.password = password;
 
