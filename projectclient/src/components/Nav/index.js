@@ -4,6 +4,7 @@ import "./style.css";
 
 const Nav = () => {
   const [navbar, setNavbar] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
   const navigate = useNavigate();
 
   const changeColor = () => {
@@ -18,7 +19,7 @@ const Nav = () => {
 
   return (
     <>
-      <nav className={navbar ? "navBar active" : "navBar"}>
+      <nav className={navbar ? "navBarActive" : "navBar"}>
         <div className="navWrapper">
           <button
             className="signBtn"
@@ -40,7 +41,61 @@ const Nav = () => {
             <img
               src="https://img.icons8.com/material-outlined/24/000000/menu.png"
               className="sideMenu"
+              onClick={() => setSidebar(!sidebar)}
             />
+            {sidebar ? (
+              <div className="sideBarDiv">
+                <ul>
+                  <li
+                    onClick={() => {
+                      navigate(-1);
+                    }}
+                  >
+                    اذهب الى الخلف
+                    <img
+                      className="backIcon"
+                      src="https://img.icons8.com/material-outlined/48/000000/circled-left--v1.png"
+                      alt="Go Back btn"
+                    />
+                  </li>
+                  <li
+                    onClick={() => {
+                      navigate("/");
+                    }}
+                  >
+                    الرئيسية
+                  </li>
+                  <li
+                    onClick={() => {
+                      navigate("/#Paragraph");
+                    }}
+                  >
+                    البرامج
+                  </li>
+                  <li
+                    onClick={() => {
+                      navigate("/podcasts");
+                    }}
+                  >
+                    الحزمات
+                  </li>
+                  <li
+                    onClick={() => {
+                      navigate("#about");
+                    }}
+                  >
+                    الوجهات السياحية
+                  </li>
+                  <li
+                    onClick={() => {
+                      navigate("/UserPage");
+                    }}
+                  >
+                    User page
+                  </li>
+                </ul>
+              </div>
+            ) : null}
           </div>
         </div>
       </nav>

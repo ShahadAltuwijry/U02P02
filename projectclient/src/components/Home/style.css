@@ -53,9 +53,9 @@
   background-size: 570px 385px;
 }
 
-h1 {
+.homeHead {
   margin: 15px;
-  /* font-family: ; */
+  color: #000000;
 }
 
 .Paragraph {
