@@ -1,13 +1,14 @@
 const programModel = require("./../../db/models/programsSchema");
 
 const createProgram = (req, res) => {
-  const { name, img, description, origLink, city } = req.body;
+  const { name, img, description, origLink, banner, city } = req.body;
 
   const newProgram = new programModel({
     name,
     img,
     description,
     origLink,
+    banner,
     city,
   });
 
