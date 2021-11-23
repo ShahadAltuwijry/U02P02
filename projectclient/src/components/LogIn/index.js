@@ -19,6 +19,9 @@ const LogIn = () => {
                 name="password"
                 placeholder="Enter Password"
               />
+              <button className="loginBtn" type="submit">
+                Submit
+              </button>
             </form>
           </div>
         ) : null}
@@ -32,6 +35,9 @@ const LogIn = () => {
                 name="password"
                 placeholder="Enter Password"
               />
+              <button className="loginBtn" type="submit">
+                Submit
+              </button>
             </form>
           </div>
         ) : null}
