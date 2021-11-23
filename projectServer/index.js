@@ -5,6 +5,8 @@ const dotenv = require("dotenv");
 const db = require("./db/index");
 const userRouter = require("./Routers/routes/users");
 const spotRouter = require("./Routers/routes/spots");
+const programRouter = require("./Routers/routes/programs");
+
 
 //setup express server
 const app = express();
@@ -14,6 +16,8 @@ app.use(cors());
 app.use(express.json());
 app.use(userRouter);
 app.use(spotRouter);
+app.use(programRouter);
+
 
 
 const PORT = process.env.PORT || 5000;

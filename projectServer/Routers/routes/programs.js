@@ -3,7 +3,7 @@ const { createProgram, getAllPrograms } = require("./../controllers/programs");
 
 const programRouter = express.Router();
 
-programRouter.post("/user", createProgram);
-programRouter.get("/user", getAllPrograms);
+programRouter.post("/program", createProgram);
+programRouter.get("/programs", getAllPrograms);
 
 module.exports = programRouter;
