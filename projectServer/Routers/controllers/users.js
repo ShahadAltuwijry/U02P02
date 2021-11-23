@@ -30,6 +30,4 @@ const getAllUsers = (req, res) => {
     });
 };
 
-
-
 module.exports = { createUser, getAllUsers };

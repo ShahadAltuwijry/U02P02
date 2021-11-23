@@ -33,8 +33,4 @@ const getAllSpots = (req, res) => {
     });
 };
 
-// const getSpotById = (req, res) => {
-
-// }
-
 module.exports = { createSpot, getAllSpots };
