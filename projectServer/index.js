@@ -6,7 +6,7 @@ const db = require("./db/index");
 const userRouter = require("./Routers/routes/users");
 const spotRouter = require("./Routers/routes/spots");
 const programRouter = require("./Routers/routes/programs");
-
+const packageRouter = require("./Routers/routes/packages");
 
 //setup express server
 const app = express();
@@ -17,8 +17,7 @@ app.use(express.json());
 app.use(userRouter);
 app.use(spotRouter);
 app.use(programRouter);
-
-
+app.use(packageRouter);
 
 const PORT = process.env.PORT || 5000;
 
