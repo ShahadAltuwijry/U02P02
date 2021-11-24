@@ -23,7 +23,7 @@ body {
   flex-direction: row;
   justify-content: center;
   justify-content: space-between;
-  /* background-color: transparent; */
+  /* background-color: white; */
   /* border: 1px solid black; */
   width: 100%;
   height: 115px;
@@ -33,8 +33,8 @@ body {
   z-index: 1;
 }
 
-.navbar {
-  background-color: transparent;
+/* .navbar {
+  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -44,8 +44,8 @@ body {
   padding: 10px;
   top: 0;
   z-index: 1;
-}
-
+} */
+/* 
 .navbarActive {
   background-color: white;
   display: flex;
@@ -58,7 +58,7 @@ body {
   padding: 10px;
   top: 0;
   z-index: 1;
-}
+} */
 
 .signBtn {
   width: 90px;
