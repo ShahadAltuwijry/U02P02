@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Header from "./../Header";
 import Footer from "./../Footer";
 import "./style.css";
 
 const Home = () => {
-  // const navigate = useNavigate();
+  const [program, setProgram] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    const res = await axios.get("http://localhost:5000/programs");
+
+    // console.log(data.data[0].data);
+
+    setProgram(res.data);
+  };
+
+  // handleClick() {
+  //   window.location.assign(`${item.origLink}`)
+  // }
+
   return (
     <div className="homeWrapper">
       <Header />
@@ -22,7 +42,6 @@ const Home = () => {
                 allowfullscreen
               ></iframe>
             </div>
-            {/* <h1>#الشتاء حولك</h1> */}
             <p className="Paragraph">
               <h1 className="homeHead">الشتاء_حولك#</h1>
               استكشف مجموعة مثيرة للاهتمام من الأنشطة والوجهات المناسبة لأشهر
@@ -38,31 +57,37 @@ const Home = () => {
             </p>
           </div>
         </div>
-        {/* </div> */}
       </div>
-      {/* <div className="programsDiv">
+      <div className="programsDiv">
         <h1>programs</h1>
-
         <div className="cardsDiv">
-          <div
-            className="card"
-            onClick={() => {
-              navigate("https://www.flynas.com/ar");
-            }}
-          >
-            <div className="imgWrapper">
-              <img src="./alula.png" alt="alula" className="cardImg" />
+          {program.map((item, i) => (
+            <div
+              key={i}
+              className="card"
+              onClick={() => {
+                navigate(`${item.origLink}`);
+              }}
+            >
+              <div className="imgWrapper">
+                <img
+                  key={`img-${i}`}
+                  src={item.img}
+                  alt={`alula=${i}`}
+                  className="cardImg"
+                />
+              </div>
+              <div className="progCont">
+                <h3 key={`prog name-${i}`}>{item.name}</h3>
+                <p className="cardParagraph" key={`desc-${i}`}>
+                  {item.description}
+                </p>
+              </div>
             </div>
-            <div className="progCont">
-              <h3>أكتشف العُلا !</h3>
-              <p className="cardParagraph">
-                احجز رحلتك المباشرة من دبي - الكويت - الرياض - جده - الدمام.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-      <div className="packagesDiv">
+      {/* <div className="packagesDiv">
         <h1>packages</h1>
       </div>
       <div className="touristDiv">

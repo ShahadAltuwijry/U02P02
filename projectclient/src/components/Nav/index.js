@@ -38,13 +38,15 @@ const Nav = () => {
             }}
           />
           <div className="side">
-            {/* <img
-              src="https://img.icons8.com/material-outlined/24/000000/menu.png"
+            <img
+              src="https://img.icons8.com/external-bearicons-glyph-bearicons/64/ffffff/external-User-essential-collection-bearicons-glyph-bearicons.png"
               className="sideMenu"
               alt="sideicon"
-              onClick={() => setSidebar(!sidebar)}
+              onClick={() => {
+                navigate("/UserPage");
+              }}
             />
-            {sidebar ? (
+            {/*   {sidebar ? (
               <div className="sideBarDiv">
                 <ul>
                   <li

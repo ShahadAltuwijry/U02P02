@@ -5,12 +5,20 @@ import "./style.css";
 
 const slideImages = [
   {
+    url: "./v5.png",
+    caption: "Slide 5",
+  },
+  {
     url: "./الدفى حولك.jpg",
     caption: "Slide 1",
   },
   {
     url: "./الشتاء حولك.jpg",
     caption: "Slide 2",
+  },
+  {
+    url: "./v5.png",
+    caption: "Slide 5",
   },
   {
     url: "./الشتاء حولك 2.jpg",
