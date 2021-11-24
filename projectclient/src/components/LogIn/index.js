@@ -43,13 +43,13 @@ const LogIn = () => {
         ) : null}
         <div className="showSignUp"></div>
         <button
-          onClick={() => setSignin(!signin && signup == false)}
+          onClick={() => setSignin(!signin && signup === false)}
           className="loginBtn"
         >
           Sign In
         </button>
         <button
-          onClick={() => setSignup(!signup && signin == false)}
+          onClick={() => setSignup(!signup && signin === false)}
           className="loginBtn"
         >
           Sign Up

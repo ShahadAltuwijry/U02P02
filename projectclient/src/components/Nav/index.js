@@ -38,9 +38,10 @@ const Nav = () => {
             }}
           />
           <div className="side">
-            <img
+            {/* <img
               src="https://img.icons8.com/material-outlined/24/000000/menu.png"
               className="sideMenu"
+              alt="sideicon"
               onClick={() => setSidebar(!sidebar)}
             />
             {sidebar ? (
@@ -95,7 +96,7 @@ const Nav = () => {
                   </li>
                 </ul>
               </div>
-            ) : null}
+            ) : null} */}
           </div>
         </div>
       </nav>

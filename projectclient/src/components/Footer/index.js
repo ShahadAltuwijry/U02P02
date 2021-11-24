@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="footerWrapper">
       <div className="staDiv">
-        <img src="./sta.png" className="sta" />
+        <img src="./sta.png" className="sta" alt="footer" />
       </div>
       {/* <p className="rights">
         Copyright © 2021 Saudi Tourism Authority. All rights reserved

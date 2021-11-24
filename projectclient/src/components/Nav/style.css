@@ -38,7 +38,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  justify-content: space-between;
   width: 100%;
   height: 110px;
   position: fixed;
@@ -73,7 +72,7 @@ body {
 
 .logo {
   width: 9%;
-  margin-right: 35px;
+  margin-right: 40px;
 }
 
 .side {
@@ -105,6 +104,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  border-radius: 15px;
   width: 250px;
   height: 300px;
   /* margin: -40px;
