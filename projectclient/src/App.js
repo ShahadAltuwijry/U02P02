@@ -9,6 +9,7 @@ import Sign from "./components/Sign";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import UserPage from "./components/UserPage";
+import ExternalPage from "./components/ExternalPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/SignIn" element={<SignIn />} />
         <Route exact path="/SignUp" element={<SignUp />} />
         <Route exact path="/UserPage" element={<UserPage />} />
+        <Route exact path="/ExternalPage" element={<ExternalPage />} />
       </Routes>
       {/* <Footer /> */}
     </div>

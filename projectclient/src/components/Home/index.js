@@ -67,7 +67,7 @@ const Home = () => {
               key={i}
               className="card"
               onClick={() => {
-                navigate(`${item.origLink}`);
+                navigate("/ExternalPage");
               }}
             >
               <div className="imgWrapper">
