@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --lightBlue: #b5dada;
+  --darker: #82bec5;
+  --BlueLagoon: #057d8b;
+  --darkest: #033f46;
+}
+
+.userDiv {
+  width: 100%;
+}
+
+.guestDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+}
+
+.guestHead {
+  color: var(--darkest);
+  margin-top: 60px;
+}
+
+.anchorg {
+  color: var(--darker);
+  font-size: 20px;
+}
+
+.anchorg:hover {
+  color: var(--darkest);
+}
