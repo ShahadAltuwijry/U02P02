@@ -37,11 +37,12 @@ const Home = () => {
                 height="330"
                 src="https://www.youtube.com/embed/WNzYGeBbOUA"
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
+
             <p className="Paragraph">
               <h1 className="homeHead">الشتاء_حولك#</h1>
               استكشف مجموعة مثيرة للاهتمام من الأنشطة والوجهات المناسبة لأشهر
