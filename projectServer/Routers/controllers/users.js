@@ -72,3 +72,36 @@ const updateUser = (req, res) => {
 //   })};
 
 module.exports = { createUser, getAllUsers, updateUser };
+
+
+//attempts that might be correct
+
+// const createUser = (req, res) => {
+//   const { userName, email, password } = req.body;
+
+//   userModel.findOne(
+//     { email: email }.then((item) => {
+//       if (item) {
+//         res
+//           .status(400)
+//           .json(
+//             "user name/email is already registred. use another email or sign in"
+//           );
+//       } else {
+//         const newUser = new userModel({
+//           userName,
+//           email,
+//           password,
+//         });
+//       }
+//     }),
+//     newUser
+//       .save()
+//       .then((result) => {
+//         res.json(result);
+//       })
+//       .catch((error) => {
+//         res.send(error.meassage);
+//       })
+//   );
+// };
