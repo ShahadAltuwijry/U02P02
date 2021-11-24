@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const SignUp = () => {
@@ -8,7 +8,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
   const signUp = (e) => {
     e.preventDefault();
@@ -19,8 +19,8 @@ const SignUp = () => {
     };
     axios
       .post(`http://localhost:5000/user`, regData)
-      .then((res) => console.log(res))
-      .then(navigate("/UserPage")); //this is a bug it will navigate even if its empty don't forget to fix it !!
+      .then((res) => console.log(res.data));
+    //this is a bug it will navigate even if its empty don't forget to fix it !!
   };
   return (
     <div className="loginWrapper">
