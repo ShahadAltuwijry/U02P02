@@ -3,20 +3,28 @@ const userModel = require("./../../db/models/userSchema");
 const createUser = (req, res) => {
   const { userName, email, password } = req.body;
 
-  const newUser = new userModel({
-    userName,
-    email,
-    password,
-  });
-
-  newUser
-    .save()
-    .then((result) => {
-      res.json(result);
-    })
-    .catch((err) => {
-      res.send(err);
+  if (userModel.userName === userName || userModel.email === email) {
+    res
+      .status(404)
+      .json(
+        "user name/email is already registred. use another email or sign in"
+      );
+  } else {
+    const newUser = new userModel({
+      userName,
+      email,
+      password,
     });
+
+    newUser
+      .save()
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((error) => {
+        res.send(error.meassage);
+      });
+  }
 };
 
 const getAllUsers = (req, res) => {
