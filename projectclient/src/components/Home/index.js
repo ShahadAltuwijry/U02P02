@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Nav from "./../Nav";
 import Header from "./../Header";
 import Footer from "./../Footer";
 import "./style.css";
@@ -25,8 +26,19 @@ const Home = () => {
   //   window.location.assign(`${item.origLink}`)
   // }
 
+  // render() {
+  // const settings = {
+  //   className: "center",
+  //   centerMode: true,
+  //   infinite: true,
+  //   centerPadding: "60px",
+  //   slidesToShow: 3,
+  //   speed: 500
+  // };
+
   return (
     <div className="homeWrapper">
+      <Nav />
       <Header />
       <div className="contDiv">
         <div className="about">
@@ -60,14 +72,14 @@ const Home = () => {
         </div>
       </div>
       <div className="programsDiv">
-        <h1>programs</h1>
+        <h1 className="progHead">برامج الطيران</h1>
         <div className="cardsDiv">
           {program.map((item, i) => (
             <div
               key={i}
               className="card"
               onClick={() => {
-                navigate("/ExternalPage");
+                navigate(`${item.origLink}`);
               }}
             >
               <div className="imgWrapper">

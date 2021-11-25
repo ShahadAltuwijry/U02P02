@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Nav = () => {
-  // const [navbar, setNavbar] = useState(false);
-  // const [backGroundColor, setBackGroundColor] = useState({
-  //   backgroundColor: "transparent",
-  // });
-  // // const [sidebar, setSidebar] = useState(false);
+  const [logged, setLogged] = useState([]);
+
   const navigate = useNavigate();
 
   // const changeColor = () => {
@@ -23,25 +20,38 @@ const Nav = () => {
   // };
   // window.addEventListener("scroll", changeColor);
 
+  useEffect(() => {
+    const userLogged = localStorage.getItem("user");
+    setLogged(JSON.parse(userLogged));
+  }, []);
+
   return (
     <>
       <div className="navWrapper">
-        <button
-          className="signBtn"
-          onClick={() => {
-            navigate("/Sign");
-          }}
-        >
-          تسجيل الدخول
-        </button>
-        <img
-          src="./روح السعودية.png"
-          className="logo"
-          alt="logo"
-          onClick={() => {
-            navigate("/");
-          }}
-        />
+        <div className="signBtnDiv">
+          {!logged ? (
+            <button
+              className="signBtn"
+              onClick={() => {
+                navigate("/Sign");
+              }}
+            >
+              تسجيل الدخول
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
+        <div className="logoDiv">
+          <img
+            src="./روح السعودية.png"
+            className="logo"
+            alt="logo"
+            onClick={() => {
+              navigate("/");
+            }}
+          />
+        </div>
         <div className="side">
           <img
             src="https://img.icons8.com/external-bearicons-glyph-bearicons/64/ffffff/external-User-essential-collection-bearicons-glyph-bearicons.png"

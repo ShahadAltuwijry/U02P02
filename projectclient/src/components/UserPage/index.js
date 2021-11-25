@@ -1,10 +1,15 @@
 import React from "react";
 import Footer from "./../Footer";
+import Nav from "./../Nav";
 import "./style.css";
 
 const UserPage = () => {
+
+  
+
   return (
     <div className="userDiv">
+      <Nav />
       <div className="guestDiv">
         <h1 className="guestHead">
           :( ضيفنا الغالي، لا نملك معلومات كافية عنك لاظهار هذه الصفحة لك

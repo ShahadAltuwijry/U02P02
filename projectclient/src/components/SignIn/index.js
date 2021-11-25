@@ -5,37 +5,29 @@ import Swal from "sweetalert2";
 import "./style.css";
 
 const SignIn = () => {
-  const [allUsers, setAllUsers] = useState([]);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [logged, setLogged] = useState([]);
 
   const navigate = useNavigate();
 
-  const getUsers = async () => {
-    const user = await axios.get("http://localhost:5000/user");
-    setAllUsers(user.data);
-    console.log(user.data);
-  };
-  console.log(allUsers);
-
-  useEffect(() => {
-    getUsers();
-  }, []);
-
-  const signin = (e) => {
+  const signIn = async (e) => {
     e.preventDefault();
-    let exist = false;
-    // eslint-disable-next-line
-    allUsers.filter((user) => {
-      if (user.userName === userName && user.password === password) {
-        exist = true;
-      }
+    console.log(userName);
+    console.log(password);
+    const res = await axios.post("http://localhost:5000/login", {
+      userName: userName,
+      password: password,
     });
-    if (exist) {
-      localStorage.setUser("user", JSON.stringify({ userName }));
-    }
-    navigate("/UserPage");
-    if (!exist) {
+
+    console.log(res);
+
+    // const signIn = (e) => {
+    //   e.preventDefault();
+    if (typeof res.data.user === "object") {
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+      navigate("/UserPage");
+    } else {
       Swal.fire({
         title:
           "اسم المستخدم او كلمة المرور خاطئة، الرجاء التأكد من المعلومات المدخلة",
@@ -46,39 +38,107 @@ const SignIn = () => {
           popup: "animate__animated animate__fadeOutUp",
         },
       });
-      navigate("/signin");
+      // navigate("/signin");
+      // }
+      // console.log(res.data.message);
+      // setMessage(res.data.message);
     }
   };
+  //   const user = await axios.get("http://localhost:5000/user");
+  //   setAllUsers(user.data);
+  //   // localStorage.setItem("users", JSON.stringify(allUsers));
+  // };
+  // // console.log(allUsers);
+
+  // useEffect(() => {
+  //   getUsers();
+  // }, []);
+
+  // const signin = (e) => {
+  //   e.preventDefault();
+  //   let exist = false;
+
+  //   // eslint-disable-next-line
+  //   allUsers.filter((user) => {
+  //     if (user.userName === userName && user.password === password) {
+  //       exist = true;
+  //     }
+  //   });
+  //   if (exist) {
+  //     const logData = {
+  //       userName: userName,
+  //       password: password,
+  //     };
+
+  //     localStorage.setItem("user", JSON.stringify(logData));
+  //   }
+  //   navigate("/UserPage");
+
+  //   if (!exist) {
+  //     Swal.fire({
+  //       title:
+  //         "اسم المستخدم او كلمة المرور خاطئة، الرجاء التأكد من المعلومات المدخلة",
+  //       showClass: {
+  //         popup: "animate__animated animate__fadeInDown",
+  //       },
+  //       hideClass: {
+  //         popup: "animate__animated animate__fadeOutUp",
+  //       },
+  //     });
+  //     navigate("/signin");
+  //   }
+  // };
+
+  useEffect(() => {
+    const userLogged = localStorage.getItem("user");
+    setLogged(JSON.parse(userLogged));
+  }, []);
+
+  console.log(logged);
   return (
     <div className="loginWrapper">
-      <div className="innerDiv">
-        <div className="showSignIn">
-          <form onSubmit={signin}>
-            <input
-              required
-              type="text"
-              name="userName"
-              placeholder="ادخل اسم المستخدم"
-              onSubmit={(e) => setUserName(e.target.value)}
-            />
-            <input
-              required
-              type="password"
-              name="password"
-              placeholder="ادخل كلمة المرور"
-              onSubmit={(e) => setPassword(e.target.value)}
-            />
-            <button className="loginBtn" type="submit" value="signin">
-              تسجيل الدخول
-            </button>
-            <br />
-            <br />
-            <a className="anchor" href="./SignUp">
-              لا تملك حسابًا بعد؟
-            </a>
-          </form>
+      <button
+        className="backBtn"
+        onClick={() => {
+          navigate(-1);
+        }}
+      >
+        العودة للخلف
+      </button>
+      {!logged ? (
+        <div className="innerDiv">
+          <div className="showSignIn">
+            <form>
+              <input
+                required
+                type="text"
+                name="userName"
+                // value={userName}
+                placeholder="ادخل اسم المستخدم"
+                onChange={(e) => setUserName(e.target.value)}
+              />
+              <input
+                required
+                type="password"
+                name="password"
+                // value={password}
+                placeholder="ادخل كلمة المرور"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button className="loginBtn" type="submit" onClick={signIn}>
+                تسجيل الدخول
+              </button>
+              <br />
+              <br />
+              <a className="anchor" href="./SignUp">
+                لا تملك حسابًا بعد؟
+              </a>
+            </form>
+          </div>
         </div>
-      </div>
+      ) : (
+        navigate("/UserPage")
+      )}
     </div>
   );
 };
