@@ -1,30 +1,34 @@
 const userModel = require("./../../db/models/userSchema");
 
-const createUser = (req, res) => {
-  const { userName, email, password } = req.body;
-
-  if (userModel.userName === userName || userModel.email === email) {
-    res
-      .status(404)
-      .json(
-        "user name/email is already registred. use another email or sign in"
-      );
-  } else {
-    const newUser = new userModel({
-      userName,
-      email,
-      password,
+const createUser = async (req, res) => {
+  try {
+    const { userName, email, password } = req.body;
+    const user = new userModel({ userName, email, password });
+    await user.save();
+    userModel.findOne({ email: email }, (err, user) => {
+      if (user) {
+        res.send({ message: "Login Successfuly", user: user });
+      }
     });
-
-    newUser
-      .save()
-      .then((result) => {
-        res.json(result);
-      })
-      .catch((error) => {
-        res.send(error.meassage);
-      });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
   }
+};
+
+//login cotroller
+const login = (req, res) => {
+  const { userName, password } = req.body;
+  userModel.findOne({ userName: userName }, (err, user) => {
+    console.log(userName);
+    if (user) {
+      if (password === user.password) {
+        res.send({ message: "Login Successfuly", user: user });
+      } else {
+        res.send({ message: "Invalid Password" });
+      }
+    }
+    res.send({ message: "You Do not have an account" });
+  });
 };
 
 const getAllUsers = (req, res) => {
@@ -71,8 +75,7 @@ const updateUser = (req, res) => {
 //     res.send()
 //   })};
 
-module.exports = { createUser, getAllUsers, updateUser };
-
+module.exports = { createUser, getAllUsers, updateUser, login };
 
 //attempts that might be correct
 
@@ -104,4 +107,30 @@ module.exports = { createUser, getAllUsers, updateUser };
 //         res.send(error.meassage);
 //       })
 //   );
+// };
+
+//   const { userName, email, password } = req.body;
+
+//   if (userModel.userName === userName || userModel.email === email) {
+//     res
+//       .status(404)
+//       .json(
+//         "user name/email is already registred. use another email or sign in"
+//       );
+//   } else {
+//     const newUser = new userModel({
+//       userName,
+//       email,
+//       password,
+//     });
+
+//     newUser
+//       .save()
+//       .then((result) => {
+//         res.json(result);
+//       })
+//       .catch((error) => {
+//         res.send(error.meassage);
+//       });
+//   }
 // };
