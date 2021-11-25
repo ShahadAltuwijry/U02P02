@@ -18,19 +18,6 @@ const Nav = () => {
   };
   window.addEventListener("scroll", changeColor);
 
-  // const changeColor = () => {
-  //   console.log(window.scrollY);
-  //   if (window.scrollY > 15) {
-  //     // setNavbar(true);
-  //     console.log("here");
-  //     setBackGroundColor({ backgroundColor: "white" });
-  //   } else {
-  //     // setNavbar(false);
-  //     setBackGroundColor({ backgroundColor: "transparent" });
-  //   }
-  // };
-  // window.addEventListener("scroll", changeColor);
-
   useEffect(() => {
     const userLogged = localStorage.getItem("user");
     setLogged(JSON.parse(userLogged));
@@ -42,7 +29,7 @@ const Nav = () => {
         <div className="signBtnDiv">
           {!logged ? (
             <button
-              className={navbar? "signBtnSrl" : "signBtn"}
+              className={navbar ? "signBtnSrl" : "signBtn"}
               onClick={() => {
                 navigate("/Sign");
               }}
