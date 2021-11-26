@@ -18,6 +18,12 @@ const Nav = () => {
   };
   window.addEventListener("scroll", changeColor);
 
+  const logOut = () => {
+    localStorage.removeItem("user");
+    window.location.reload();
+    navigate("./");
+  };
+
   useEffect(() => {
     const userLogged = localStorage.getItem("user");
     setLogged(JSON.parse(userLogged));
@@ -37,7 +43,12 @@ const Nav = () => {
               تسجيل الدخول
             </button>
           ) : (
-            ""
+            <button
+              className={navbar ? "signBtnSrl" : "signBtn"}
+              onClick={logOut}
+            >
+              تسجيل الخروج
+            </button>
           )}
         </div>
         <div className="logoDiv">

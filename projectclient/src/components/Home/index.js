@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Nav from "./../Nav";
 import Header from "./../Header";
@@ -8,7 +8,7 @@ import "./style.css";
 
 const Home = () => {
   const [program, setProgram] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     getData();
@@ -21,10 +21,6 @@ const Home = () => {
 
     setProgram(res.data);
   };
-
-  // handleClick() {
-  //   window.location.assign(`${item.origLink}`)
-  // }
 
   // render() {
   // const settings = {
@@ -71,32 +67,36 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="interiorDiv">
+        <h1 className="interiorHead">هنا السعودية</h1>
+      </div>
       <div className="programsDiv">
         <h1 className="progHead">برامج الطيران</h1>
         <div className="cardsDiv">
           {program.map((item, i) => (
-            <div
-              key={i}
-              className="card"
-              onClick={() => {
-                navigate(`${item.origLink}`);
-              }}
+            <a
+              href={item.origLink}
+              target="_blank"
+              className="exNavigateLink"
+              rel="noreferrer"
             >
-              <div className="imgWrapper">
-                <img
-                  key={`img-${i}`}
-                  src={item.img}
-                  alt={`alula=${i}`}
-                  className="cardImg"
-                />
+              <div key={i} className="card">
+                <div className="imgWrapper">
+                  <img
+                    key={`img-${i}`}
+                    src={item.img}
+                    alt={`alula=${i}`}
+                    className="cardImg"
+                  />
+                </div>
+                <div className="progCont">
+                  <h3 key={`prog name-${i}`}>{item.name}</h3>
+                  <p className="cardParagraph" key={`desc-${i}`}>
+                    {item.description}
+                  </p>
+                </div>
               </div>
-              <div className="progCont">
-                <h3 key={`prog name-${i}`}>{item.name}</h3>
-                <p className="cardParagraph" key={`desc-${i}`}>
-                  {item.description}
-                </p>
-              </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
