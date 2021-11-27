@@ -65,6 +65,76 @@
   font-size: 20px;
 }
 
+.interiorDiv {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.interWordDiv {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  right: 100%;
+  /* border: #033f46 solid 1px; */
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 19%,
+    rgba(5, 125, 139, 1) 100%
+  );
+  /* height: 752px; */
+}
+
+.interiorHead {
+  margin: 20px;
+  color: #ffffff;
+  margin-bottom: -10px;
+}
+
+.interP {
+  width: 90%;
+  text-align: right;
+  margin-top: -20px;
+  margin: 20px;
+  margin-right: 50px;
+  color: #ffffff;
+}
+
+.interImgDiv {
+  width: 30%;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 50px;
+  box-shadow: 0 0 1px #000;
+  margin-top: -1314.733px;
+  background-color: #057d8b;
+  /* background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 19%,
+    rgba(5, 125, 139, 1) 100%
+  ); */
+}
+
+.interImg {
+  width: 100%;
+}
+
+.videoTag {
+  width: 100%;
+  height: 50%;
+  z-index: -99;
+  filter: brightness(75%);
+}
+
+.video {
+  filter: brightness(95%);
+}
+
 .packagesDiv {
   width: 100%;
   height: 300px;
@@ -107,10 +177,15 @@
   margin: 10px;
   width: 25%;
   height: 90%;
-  /* border: 1px solid black; */
+  border: 1px solid rgba(0, 0, 0, 0.219);
   /* box-shadow: var(--lightBlue); */
   border-radius: 30px;
   transition: all ease-in-out 0.6s;
+}
+
+.exNavigateLink:hover {
+  cursor: pointer;
+  transform: scale(1.02);
 }
 
 /* .card {
@@ -125,11 +200,6 @@
   transition: all ease-in-out 0.6s;
 } */
 
-.exNavigateLink:hover {
-  cursor: pointer;
-  transform: scale(1.02);
-}
-
 .imgWrapper {
   width: 100%;
   border-radius: 30px;
@@ -137,12 +207,12 @@
 
 .cardImg {
   width: 100%;
-  /* border-radius: 30px; */
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 .progCont {
   width: 100%;
-  height: 100%;
   text-align: right;
   margin-top: 10px;
   margin: -5px;
@@ -161,4 +231,132 @@ a {
   color: black;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.spotCards {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+.spotCard {
+  display: flex;
+  align-items: flex-start;
+  width: 95%;
+  height: 290px;
+  margin-left: 15px;
+  margin: 10px;
+  /* border: 1px solid black; */
+  border-radius: 30px;
+  transition: all ease-in-out 0.6s;
+  background-color: rgba(255, 255, 255, 0.383);
+}
+
+.spotCard:hover {
+  transform: scale(1.02);
+}
+
+.spotImg {
+  /* border: 1px solid black; */
+  margin-left: 10px;
+  border-radius: 20px;
+  /* opacity: 20%; */
+  display: flex;
+  align-items: flex-start;
+  width: 38%;
+}
+
+.spotImg2 {
+  border-radius: 100%;
+  display: flex;
+  align-items: flex-start;
+  width: 90%;
+  margin-left: 20px;
+  margin-top: 10px;
+  transition: all ease-in-out 0.6s;
+}
+
+.spotImg2:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+  transform: scale(1.02);
+}
+
+.spotCont {
+  /* border: 1px solid black; */
+  display: flex;
+  width: 58%;
+  height: 50%;
+}
+
+.spotName {
+  color: #ffffff;
+  font-size: 65px;
+  z-index: 99;
+  margin-left: -190px;
+  margin-top: 100px;
+  transition: all ease-in-out 0.6s;
+}
+
+.sideSpotDiv {
+  margin-right: 100px;
+}
+
+.spotP {
+  margin-top: 50px;
+  text-align: right;
+  font-size: 20px;
+  width: 90%;
+  margin-left: 150px;
+}
+
+.spotBtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin-top: -40px;
+}
+
+.spotBtn {
+  width: 100px;
+  height: 35px;
+  /* margin-left: 300px; */
+  margin-bottom: 20px;
+  margin-right: 10px;
+  border-radius: 40px;
+  border: none;
+  background-color: #82bec5;
+  transition: all ease-in-out 0.6s;
+}
+
+.spotBtn:hover {
+  cursor: pointer;
+  background-color: #057d8b;
+  transform: scale(1.05);
+}
+
+.addBtn {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: none;
+  background-color: #82bec5;
+  transition: all ease-in-out 0.6s;
+}
+
+.addBtn:hover {
+  cursor: pointer;
+  background-color: #057d8b;
+  transform: scale(1.05);
+}
+
+.addIcon {
+  width: 20px;
+  opacity: 0.9;
 }

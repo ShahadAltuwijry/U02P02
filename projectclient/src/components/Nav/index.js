@@ -9,7 +9,7 @@ const Nav = () => {
   const navigate = useNavigate();
 
   const changeColor = () => {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if (window.scrollY > 15) {
       setNavbar(true);
     } else {

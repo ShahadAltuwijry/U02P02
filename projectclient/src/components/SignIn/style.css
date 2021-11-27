@@ -47,13 +47,13 @@ h1 {
 }
 
 .backBtn {
-  width: 90px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 40px;
   border: none;
-  margin-right: 65rem;
+  margin-right: 67rem;
   /* margin-top: 10px; */
-  background-color: #ffffff;
+  background-color: #ffffffab;
   transition: all ease-in-out 0.6s;
 }
 
@@ -112,4 +112,8 @@ input {
 
 .anchor:hover {
   color: #057d8b;
+}
+
+.backIcon {
+  width: 10px;
 }

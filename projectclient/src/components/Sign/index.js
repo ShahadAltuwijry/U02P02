@@ -17,10 +17,10 @@ const Sign = () => {
       <button
         className="backBtn"
         onClick={() => {
-          navigate(-1);
+          navigate("/");
         }}
       >
-        العودة للخلف
+        <img src="https://img.icons8.com/material-rounded/24/000000/home.png" alt="key" />
       </button>
       {!logged ? (
         <div className="innerDiv">
