@@ -33,4 +33,17 @@ const getAllSpots = (req, res) => {
     });
 };
 
-module.exports = { createSpot, getAllSpots };
+const getSpotsById = (req, res) => {
+  const { id } = req.params;
+
+  spotsModel
+    .findById({ _id: id })
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+module.exports = { createSpot, getAllSpots, getSpotsById };
